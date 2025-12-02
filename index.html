@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dylan Castro | Nonprofit Founder & Digital Creator</title>
-    <meta name="description" content="Dylan Castro - 16-year-old nonprofit founder from Florida creating Adzentura and Jemway to help with mental health and overcoming personal challenges">
+    <title>Dylan Castro | Adzentura Founder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7e22ce;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --accent: #06b6d4;
+            --transition: all 0.3s ease;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            color: var(--secondary);
+            background-color: var(--light);
+            overflow-x: hidden;
         }
 
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -39,14 +42,14 @@
         /* Header & Navigation */
         header {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
 
-        nav {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -57,6 +60,14 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            color: var(--accent);
         }
 
         .nav-links {
@@ -66,7 +77,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--secondary);
             font-weight: 500;
             transition: var(--transition);
         }
@@ -75,53 +86,80 @@
             color: var(--primary);
         }
 
-        .mobile-menu {
+        .mobile-menu-btn {
             display: none;
+            background: none;
+            border: none;
             font-size: 1.5rem;
+            color: var(--secondary);
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
             padding: 160px 0 100px;
-            text-align: center;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero h1 {
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
             font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
             margin-bottom: 20px;
-            color: var(--dark);
+            color: var(--secondary);
         }
 
-        .hero h1 span {
+        .hero-text h1 span {
             color: var(--primary);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+        .hero-text .tagline {
+            font-size: 1.25rem;
             color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
         }
 
-        .btn {
+        .highlight {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
+            background-color: var(--accent);
             color: white;
-            border: none;
-            border-radius: 5px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
+            margin-bottom: 20px;
         }
 
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
         }
 
         /* About Section */
@@ -130,36 +168,32 @@
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
             font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            text-align: center;
         }
 
-        .section-title p {
+        .section-subtitle {
+            font-size: 1.1rem;
             color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
         }
 
         .about-content {
-            display: flex;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
+            align-items: center;
         }
 
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--dark);
+            color: var(--secondary);
         }
 
         .about-text p {
@@ -167,444 +201,383 @@
             color: var(--gray);
         }
 
-        .about-icon {
-            flex: 1;
-            display: flex;
-            justify-content: center;
+        .innovation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--accent);
+        }
+
+        .innovation-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .innovation-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Adzentura Section */
+        .adzentura-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .adzentura-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            font-size: 10rem;
-            color: var(--primary);
-            opacity: 0.7;
         }
 
-        /* Projects Section */
-        .projects {
-            background-color: #f1f5f9;
+        .adzentura-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        .projects-grid {
+        .adzentura-text p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .ai-features {
+            list-style: none;
+        }
+
+        .ai-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ai-features i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .adzentura-logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Skills Section */
+        .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
 
-        .project-card:hover {
+        .skill-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .project-icon {
-            height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 3rem;
-            color: white;
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
-        .project-icon.adzentura {
-            background-color: var(--primary);
-        }
-
-        .project-icon.jemway {
-            background-color: var(--secondary);
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-content h3 {
+        .skill-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .project-content p {
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-
-        .project-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            gap: 10px;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            gap: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .contact-info p {
-            margin-bottom: 30px;
-            color: var(--gray);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-link {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        .contact-form {
-            flex: 1;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+            color: var(--secondary);
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--secondary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 70px 0 30px;
         }
 
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             color: white;
-            margin-bottom: 15px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 20px;
         }
 
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .about-content, .contact-content {
-                flex-direction: column;
+            .hero-content, .about-content, .adzentura-container {
+                grid-template-columns: 1fr;
             }
-            
-            .about-icon {
-                font-size: 8rem;
+
+            .hero-text h1 {
+                font-size: 2.8rem;
             }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-menu {
+
+            .mobile-menu-btn {
                 display: block;
             }
-            
-            .hero h1 {
-                font-size: 2.8rem;
+
+            .hero-text h1 {
+                font-size: 2.3rem;
             }
-            
-            .section-title h2 {
+
+            .section-title {
                 font-size: 2rem;
             }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
+
+            .section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .innovation-card, .skill-card {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Dylan Castro</div>
-                <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-user-circle"></i>
+                Dylan Castro
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#adzentura">Adzentura</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
-            <h1>Hi, I'm <span>Dylan Castro</span></h1>
-            <p>16-year-old nonprofit founder from Florida dedicated to mental health awareness and helping others overcome personal challenges through digital platforms.</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="highlight">Innovator & Entrepreneur</div>
+                    <h1>Hi, I'm <span>Dylan Castro</span></h1>
+                    <p class="tagline">Founder of Adzentura, creating the future of news with AI-powered fact-checking technology.</p>
+                    
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Based in Florida, USA</span>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="profile-img-placeholder">
+                        <!-- In a real site, this would be an actual image -->
+                        <div class="profile-img" style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            <div style="text-align: center; padding: 40px;">
+                                <i class="fas fa-user" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                                <p>Dylan Castro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Learn more about my mission and background</p>
-            </div>
+            <h2 class="section-title">Who I Am</h2>
+            <p class="section-subtitle">Entrepreneur, developer, and innovator passionate about leveraging technology to solve real-world problems.</p>
+            
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Creating Impact Through Digital Platforms</h3>
-                    <p>As a 16-year-old based in Florida, I've channeled my passion for helping others into creating two nonprofit websites that address critical issues affecting people today.</p>
-                    <p>My work focuses on providing accessible information and support for mental health challenges and helping individuals overcome harmful habits related to pornography and lust.</p>
-                    <p>Through Adzentura and Jemway, I aim to create positive change by offering resources, guidance, and community support to those in need.</p>
+                    <h3>Building the Future of Media</h3>
+                    <p>I'm Dylan Castro, a Florida-based entrepreneur with a passion for creating innovative solutions in the media landscape. As the founder of Adzentura, I've combined my technical skills with my vision for more reliable information.</p>
+                    <p>I personally designed and developed this website from the ground up, implementing modern web technologies to create a clean, professional experience that reflects my commitment to quality and innovation.</p>
+                    <p>My journey in technology and media has been driven by a simple belief: we can use artificial intelligence to enhance human understanding rather than replace it.</p>
                 </div>
-                <div class="about-icon">
-                    <i class="fas fa-hand-holding-heart"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Nonprofit Projects</h2>
-                <p>Websites dedicated to helping others overcome challenges</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon adzentura">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Adzentura</h3>
-                        <p>A comprehensive mental health resource providing information on various disorders and practical strategies to combat them. Our mission is to make mental health support accessible to everyone.</p>
-                        <a href="https://adzentura.com" target="_blank" class="project-link">
-                            Visit Site <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon jemway">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Jemway</h3>
-                        <p>A supportive platform dedicated to helping individuals overcome challenges with lust and pornography addiction. We provide resources, guidance, and community for those seeking healthier lifestyles.</p>
-                        <a href="https://jemway.com" target="_blank" class="project-link">
-                            Visit Site <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                
+                <div class="innovation-card">
+                    <h4>AI Innovation in News</h4>
+                    <p>I created the first news site that uses AI to scrape, fact-check, and verify information in real-time. This revolutionary approach addresses the growing challenge of misinformation while delivering timely, accurate news.</p>
+                    <p>The system combines natural language processing, machine learning, and data verification algorithms to ensure every piece of content meets the highest standards of accuracy before publication.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
+    <!-- Adzentura Section -->
+    <section id="adzentura" class="section adzentura-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Connect with me through social media or send a message</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always open to discussing potential collaborations, partnerships, or simply connecting with like-minded individuals who share my passion for helping others.</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/castro_dyl74998" target="_blank" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/dylan-castro-305685374" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://instagram.com/adzentura" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
+            <div class="adzentura-container">
+                <div class="adzentura-text">
+                    <h2>Adzentura: The Future of News</h2>
+                    <p>Adzentura represents a paradigm shift in digital journalism. As the owner and creator, I've built a platform that leverages cutting-edge AI to transform how news is gathered, verified, and delivered.</p>
+                    <p>Our proprietary technology scans thousands of sources, cross-references information, and applies fact-checking algorithms to ensure only verified news reaches our readers.</p>
+                    
+                    <ul class="ai-features">
+                        <li><i class="fas fa-check-circle"></i> Real-time AI fact-checking</li>
+                        <li><i class="fas fa-check-circle"></i> Automated source verification</li>
+                        <li><i class="fas fa-check-circle"></i> Bias detection algorithms</li>
+                        <li><i class="fas fa-check-circle"></i> Continuous learning and improvement</li>
+                    </ul>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                
+                <div class="adzentura-logo">
+                    ADZENTURA
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Combining technical expertise with entrepreneurial vision to create innovative solutions.</p>
+            
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Built this website and the Adzentura platform from scratch using modern web technologies, responsive design, and optimized performance.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Developed proprietary AI systems for news scraping, fact-checking, and verification that power the Adzentura platform.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Entrepreneurship</h3>
+                    <p>Founded and grew Adzentura from concept to a functioning news platform, managing all aspects of business development and strategy.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <div class="footer-logo">Dylan Castro</div>
-                    <p>Nonprofit Founder & Digital Creator</p>
+                <div class="footer-col">
+                    <h3>Dylan Castro</h3>
+                    <p>Entrepreneur & Innovator based in Florida. Founder of Adzentura, the AI-powered fact-checked news platform.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                
+                <div class="footer-col">
+                    <h3>Adzentura</h3>
+                    <p>The first news platform that uses AI to scrape, fact-check, and verify information in real-time, setting a new standard for reliable journalism.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Location</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Based in Florida, USA</p>
+                    <p><i class="fas fa-globe"></i> Serving a global audience with verified news</p>
                 </div>
             </div>
+            
             <div class="copyright">
-                &copy; 2023 Dylan Castro. All Rights Reserved.
+                <p>Website designed and developed by Dylan Castro</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
-
-        // Smooth scrolling for navigation links
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    if(window.innerWidth <= 768) {
-                        document.querySelector('.nav-links').classList.remove('active');
-                    }
                 }
             });
         });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-
-        // Update copyright year
-        document.querySelector('.copyright').innerHTML = `&copy; ${new Date().getFullYear()} Dylan Castro. All Rights Reserved.`;
     </script>
 </body>
 </html>
